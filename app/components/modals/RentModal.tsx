@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import CategoryInput from "../inputs/CategoryInput";
 import Counter from "../inputs/Counter";
 import CountrySelect from "../inputs/CountrySelect";
+import ImageUpload from "../inputs/ImageUpload";
 import { categories } from "../navbar/Categories";
 import Modal from "./Modal";
 
@@ -163,6 +164,21 @@ const RentModal = () => {
           subtitle="How many bathrooms do you have"
           value={bathroomCount}
           onChange={(value) => setCustomValue("bathroomCount", value)}
+        />
+      </div>
+    );
+  }
+
+  if (step === STEPS.IMAGES) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Upload an image of your place"
+          subtitle="Show guests what your place looks likes!"
+        />
+        <ImageUpload
+          value={imageSrc}
+          onChange={(value) => setCustomValue("imageSrc", value)}
         />
       </div>
     );
