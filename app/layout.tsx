@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   description: "Airbnb Clone",
 };
 
+export const dynamic = "force-dynamic";
+
 const font = Nunito({
   subsets: ["latin"],
 });
@@ -24,7 +26,7 @@ export default async function RootLayout({
 }>) {
   const currentUser = await getCurrentUser();
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={font.className}>
         <ToasterProvider />
         <SearchModal />
@@ -32,7 +34,7 @@ export default async function RootLayout({
         <RegisterModal />
         <LoginModal />
         <Navbar currentUser={currentUser} />
-        <div className="pb-20 pt-28">{children}</div>
+        <div className='pb-20 pt-28'>{children}</div>
       </body>
     </html>
   );
